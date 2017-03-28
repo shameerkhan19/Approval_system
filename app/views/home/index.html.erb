@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <%= form_tag(@file, multipart:true) do |form| %>
+  <p>Enter the Name of the Venue: </p>
+  <p><%= text_field_tag "venueName" %></p>
+  <p>Enter the address of the Venue: </p>
+  <p><%= text_field_tag "venueAddress"%></p>
+  <p>Enter the Ownername: </p>
+  <p><%= text_field_tag "ownerName" %></p>
+  <p><%= submit_tag "Submit Draft" %></p>
+  <% end %>
+
+  <% count = 0 %>
+  <% Draft.all.each do |object| %>
+  <% if object.venue_address == "" %>
+  <% count = count+1 %>
+  <% elsif object.venue_ownername == "" %>
+  <% count = count +1 %>
+  <% end %>
+  <% end %>
+  <p>you have <%= count %> files needs updating</p>
+  <p>to finish incomplete entries simply just provide the form with all missing variables and the venue name they are for</p>
+
+  <% Draft.all.each do |object| %>
+  <% if object.venue_address == "" and object.venue_ownername=="" %>
+  <li>Missing multiple vaules with venue name : <%= object.venue_name %> needs updating</li>
+  <% elsif object.venue_ownername == "" %>
+  <li>Entry with veneu name : <%= object.venue_name %> needs updating stil needs owner name</li>
+  <% elsif object.venue_address==""%>
+  <li>Missing address wih venue name: <%= object.venue_name %> needs updating</li>
+  <% end %>
+  <% end %>
+
+  <a href="home/draftdb">click to see the current draft list</a>
+
+  <p>for admins :</p>
+
+  <% finalCount = 0 %>
+  <% Draft.all.each do |i| %>
+  <% if i.venue_name != "" and i.venue_address != "" and i.venue_ownername != "" and i.rejected == nil %>
+  <% finalCount = finalCount+1 %>
+  <% end %>
+  <% end %>
+  <p>admin needs to approve <%= finalCount %> forms</p>
+  <a href="/master">approval needed!</a>
+
+
+
+
+</body>
+</html>

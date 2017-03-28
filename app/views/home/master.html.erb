@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <% Draft.all.each do |i| %>
+  <% if i.rejected == nil or i.rejected == nil %>
+  <%= i.venue_name %>|<%= i.venue_address %>|<%= i.venue_ownername %>
+  <%= submit_tag "approve" %>
+  <%= submit_tag "reject" %>
+  <% end %>
+  </br>
+  <% end %>
+
+</body>
+</html>

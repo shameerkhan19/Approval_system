@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Venue name:</strong>
+  <%= @final.venue_name %>
+</p>
+
+<p>
+  <strong>Venue address:</strong>
+  <%= @final.venue_address %>
+</p>
+
+<p>
+  <strong>Venue ownername:</strong>
+  <%= @final.venue_ownername %>
+</p>
+
+<p>
+  <strong>Approved at:</strong>
+  <%= @final.approved_at %>
+</p>
+
+<p>
+  <strong>Approved by:</strong>
+  <%= @final.approved_by %>
+</p>
+
+<%= link_to 'Edit', edit_final_path(@final) %> |
+<%= link_to 'Back', finals_path %>

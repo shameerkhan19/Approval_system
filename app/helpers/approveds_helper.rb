@@ -1,0 +1,2 @@
+module ApprovedsHelper
+end

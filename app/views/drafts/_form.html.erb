@@ -1,0 +1,42 @@
+<%= form_for(draft) do |f| %>
+  <% if draft.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(draft.errors.count, "error") %> prohibited this draft from being saved:</h2>
+
+      <ul>
+      <% draft.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :venue_name %>
+    <%= f.text_field :venue_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :venue_address %>
+    <%= f.text_field :venue_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :venue_ownername %>
+    <%= f.text_field :venue_ownername %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rejected %>
+    <%= f.check_box :rejected %>
+  </div>
+
+  <div class="field">
+    <%= f.label :accepted %>
+    <%= f.check_box :accepted %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

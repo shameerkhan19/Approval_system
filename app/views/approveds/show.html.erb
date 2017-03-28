@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Venue name:</strong>
+  <%= @approved.venue_name %>
+</p>
+
+<p>
+  <strong>Venue address:</strong>
+  <%= @approved.venue_address %>
+</p>
+
+<p>
+  <strong>Venue ownername:</strong>
+  <%= @approved.venue_ownername %>
+</p>
+
+<p>
+  <strong>Approved at:</strong>
+  <%= @approved.approved_at %>
+</p>
+
+<p>
+  <strong>Approved by:</strong>
+  <%= @approved.approved_by %>
+</p>
+
+<%= link_to 'Edit', edit_approved_path(@approved) %> |
+<%= link_to 'Back', approveds_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Finals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Venue name</th>
+      <th>Venue address</th>
+      <th>Venue ownername</th>
+      <th>Approved at</th>
+      <th>Approved by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finals.each do |final| %>
+      <tr>
+        <td><%= final.venue_name %></td>
+        <td><%= final.venue_address %></td>
+        <td><%= final.venue_ownername %></td>
+        <td><%= final.approved_at %></td>
+        <td><%= final.approved_by %></td>
+        <td><%= link_to 'Show', final %></td>
+        <td><%= link_to 'Edit', edit_final_path(final) %></td>
+        <td><%= link_to 'Destroy', final, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Final', new_final_path %>

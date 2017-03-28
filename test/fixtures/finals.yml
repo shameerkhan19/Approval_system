@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venue_name: MyString
+  venue_address: MyString
+  venue_ownername: MyString
+  approved_at: 2017-03-24 12:17:11
+  approved_by: MyString
+
+two:
+  venue_name: MyString
+  venue_address: MyString
+  venue_ownername: MyString
+  approved_at: 2017-03-24 12:17:11
+  approved_by: MyString

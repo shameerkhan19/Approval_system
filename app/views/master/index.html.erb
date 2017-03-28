@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>hello admin</h1>
+  <% Draft.all.each do |i| %>
+  <% if i.rejected == nil %>
+  <%= form_for (Final.new), :url => {controller: "master", action: "create"} do |f| %>
+  <%= f.text_field :venuename, :value => i.venue_name %>
+  <%= f.text_field :venue_address, :value => i.venue_address %>
+  <%= f.text_field :venue_ownername, :value => i.venue_ownername %>
+  <%= submit_tag :accept, :value => "Approve" %>
+  <%= submit_tag :reject, :value => "Discard" %>
+  <% end %>
+  <% end %>
+  <% end %>
+  <p><a href="/master/approve">See all the approved DB here</a></p>
+</body>
+</html>

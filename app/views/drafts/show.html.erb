@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Venue name:</strong>
+  <%= @draft.venue_name %>
+</p>
+
+<p>
+  <strong>Venue address:</strong>
+  <%= @draft.venue_address %>
+</p>
+
+<p>
+  <strong>Venue ownername:</strong>
+  <%= @draft.venue_ownername %>
+</p>
+
+<p>
+  <strong>Rejected:</strong>
+  <%= @draft.rejected %>
+</p>
+
+<p>
+  <strong>Accepted:</strong>
+  <%= @draft.accepted %>
+</p>
+
+<%= link_to 'Edit', edit_draft_path(@draft) %> |
+<%= link_to 'Back', drafts_path %>
